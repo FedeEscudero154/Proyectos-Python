@@ -1,5 +1,5 @@
 
-def fibo(n):
+def fiboNVeces(n):
     num_anterior = 0
     num_siguiente = 1
     contador = 0
@@ -19,10 +19,24 @@ def fibo(n):
 
     return serie
 
-n = int(input("Elegi un numero: "))
-cantidad_fibo = fibo(n)
-print(cantidad_fibo)
-print("Esa es la sucesion de Fibonacci de tu numero, de nada.")
+def fiboMenorA(n):
+    num_anterior = 0
+    num_siguiente = 1
+    serie = []
+    if n == 1:
+        serie.append(1)
+    elif n == 2:
+        serie.append(1)
+        serie.append(2)
+    else:
+        while num_anterior < n:
+            serie.append(num_anterior)
+            aux = num_siguiente
+            num_siguiente = num_siguiente + num_anterior
+            num_anterior = aux
+
+    return serie
+
 
 def test_caso_de_10_numeros():
     valores = fibo(10)
@@ -34,5 +48,3 @@ def test_caso_de_3_fibonacci():
     valores = fibo(10)
     assert valores[2] == 1
 
-test_caso_de_10_numeros()
-test_caso_de_3_fibonacci()
