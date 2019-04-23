@@ -1,3 +1,4 @@
+
 squareOfTheSum = []
 sumOfTheSquares = []
 for i in range(1, 101):
